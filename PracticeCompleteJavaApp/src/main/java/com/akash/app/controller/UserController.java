@@ -14,13 +14,13 @@ import com.akash.app.response.UserResponse;
 import com.akash.app.service.UserService;
 
 @RestController
-@RequestMapping("user/") // http://localhost:8080/user
+@RequestMapping("users/") // http://localhost:8080/user
 public class UserController {
 
 	@Autowired
 	UserService userService;
 
-	@PostMapping("create")
+	@PostMapping
 	public UserResponse createUser(@RequestBody UserDetailsRequestModel userDetails) {
 		UserResponse userResponse = new UserResponse();
 
@@ -33,7 +33,7 @@ public class UserController {
 		return userResponse;
 	}
 
-	@GetMapping("getuser")
+	@GetMapping
 	public String getUser() {
 		return "get user";
 	}
